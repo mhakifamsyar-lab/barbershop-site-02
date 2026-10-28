@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ms" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAKUMI BARBERSHOP (匠) | Semantan Walk, Temerloh</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Noto Serif JP & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jp: {
+                            red: '#BC002D',
+                            crimson: '#8B0000',
+                            dark: '#0F0F12',
+                            card: '#18181C',
+                            border: '#2A2A32',
+                            gold: '#D4AF37',
+                            cream: '#F4F1EA'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif JP"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0F0F12;
+        }
+        .font-jp {
+            font-family: 'Noto Serif JP', serif;
+        }
+        /* Motif Pattern Seigaiha / Grid Jepun */
+        .bg-japanese-pattern {
+            background-image: radial-gradient(rgba(188, 0, 45, 0.12) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-jp-dark text-slate-100 selection:bg-jp-red selection:text-white min-h-screen">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-jp-dark/90 backdrop-blur-md border-b border-jp-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-jp-red to-jp-crimson flex items-center justify-center text-white font-black text-xl shadow-lg shadow-jp-red/30 border border-jp-red/50 group-hover:scale-105 transition-transform">
+                        <span class="font-jp">匠</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl font-black tracking-wider text-white uppercase font-jp">TAKUMI</span>
+                            <span class="text-xs px-2 py-0.5 rounded bg-jp-red/20 text-jp-red font-bold border border-jp-red/30">匠</span>
+                        </div>
+                        <p class="text-[10px] tracking-widest text-slate-400 font-semibold uppercase">Japanese Barber Experience</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
+                    <a href="#about" class="hover:text-jp-red transition-colors">Pengenalan</a>
+                    <a href="#services" class="hover:text-jp-red transition-colors">Menu Servis</a>
+                    <a href="#hours" class="hover:text-jp-red transition-colors">Waktu Operasi</a>
+                    <a href="#location" class="hover:text-jp-red transition-colors">Lokasi</a>
+                    <a href="#booking" class="px-6 py-2.5 rounded-full bg-jp-red hover:bg-jp-crimson text-white font-bold transition-all shadow-md shadow-jp-red/25 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4"></i> Tempah Slot
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button id="menuBtn" class="md:hidden p-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-jp-card border border-jp-border">
+                    <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-jp-card border-b border-jp-border px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="mobile-link block py-2 text-slate-300 hover:text-jp-red">Pengenalan</a>
+            <a href="#services" class="mobile-link block py-2 text-slate-300 hover:text-jp-red">Menu Servis</a>
+            <a href="#hours" class="mobile-link block py-2 text-slate-300 hover:text-jp-red">Waktu Operasi</a>
+            <a href="#location" class="mobile-link block py-2 text-slate-300 hover:text-jp-red">Lokasi</a>
+            <a href="#booking" class="mobile-link block py-2.5 text-center rounded-xl bg-jp-red text-white font-bold">
+                Tempah Slot Sekarang
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="about" class="relative py-20 md:py-32 overflow-hidden bg-japanese-pattern border-b border-jp-border">
+        <!-- Sun motif accent -->
+        <div class="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-jp-red/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6 text-center md:text-left">
+                    <!-- Status Badge -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-jp-card border border-jp-border text-sm">
+                        <span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-red-500"></span>
+                        <span id="statusText" class="text-slate-300 font-medium">Semak status waktu kedai...</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight">
+                        Kemasan Barber <br />
+                        <span class="font-jp text-jp-red">匠 Master Craft</span> <br />
+                        Sentuhan Temerloh.
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-lg mx-auto md:mx-0 leading-relaxed">
+                        <strong class="text-white">Takumi (匠)</strong> membawakan ketelitian dan keselesaan dandanan rambut berkonsepkan ketelitian pertukangan Jepun. Nikmati pemotongan presisi dan layanan profesional di Semantan Walk.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                        <a href="#booking" class="px-8 py-4 rounded-xl bg-jp-red hover:bg-jp-crimson text-white font-bold text-lg transition-all shadow-xl shadow-jp-red/30 flex items-center justify-center gap-3">
+                            <i data-lucide="scissors" class="w-5 h-5"></i>
+                            Tempah WhatsApp
+                        </a>
+                        <a href="https://wa.me/601163824778" target="_blank" rel="noreferrer" class="px-8 py-4 rounded-xl bg-jp-card hover:bg-slate-800 text-white font-semibold text-lg border border-jp-border transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="phone" class="w-5 h-5 text-jp-gold"></i>
+                            011-6382 4778
+                        </a>
+                    </div>
+
+                    <!-- Quick Highlights -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-jp-border/60">
+                        <div class="bg-jp-card/40 p-3 rounded-xl border border-jp-border">
+                            <p class="text-xl sm:text-2xl font-black text-jp-red font-jp">精密</p>
+                            <p class="text-[11px] text-slate-400">Potongan Presisi</p>
+                        </div>
+                        <div class="bg-jp-card/40 p-3 rounded-xl border border-jp-border">
+                            <p class="text-xl sm:text-2xl font-black text-jp-gold font-jp">快適</p>
+                            <p class="text-[11px] text-slate-400">Selesa & Premium</p>
+                        </div>
+                        <div class="bg-jp-card/40 p-3 rounded-xl border border-jp-border">
+                            <p class="text-xl sm:text-2xl font-black text-white font-jp">7 Hari</p>
+                            <p class="text-[11px] text-slate-400">Waktu Operasi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Japanese-styled Banner Card -->
+                <div class="relative">
+                    <div class="relative mx-auto max-w-md bg-jp-card border border-jp-border p-8 rounded-3xl shadow-2xl overflow-hidden">
+                        
+                        <!-- Kanji Stamp Decor -->
+                        <div class="absolute -right-6 -bottom-6 opacity-10 font-jp text-9xl text-white font-bold select-none pointer-events-none">
+                            匠
+                        </div>
+
+                        <div class="flex justify-between items-start mb-6 border-b border-jp-border pb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold font-jp text-white tracking-widest">TAKUMI BARBER</h3>
+                                <p class="text-xs text-jp-gold font-semibold tracking-wider uppercase">Master Hair & Grooming</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-jp-red/10 border border-jp-red/40 flex items-center justify-center text-jp-red font-jp text-xl font-bold">
+                                匠
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 my-6">
+                            <div class="flex items-center gap-4 p-3.5 rounded-xl bg-jp-dark/80 border border-jp-border">
+                                <i data-lucide="sparkles" class="text-jp-gold w-5 h-5 shrink-0"></i>
+                                <span class="text-sm text-slate-200">Japanese Precision Fade & Modern Cuts</span>
+                            </div>
+                            <div class="flex items-center gap-4 p-3.5 rounded-xl bg-jp-dark/80 border border-jp-border">
+                                <i data-lucide="wind" class="text-jp-red w-5 h-5 shrink-0"></i>
+                                <span class="text-sm text-slate-200">Hot Towel Shave & Facial Grooming</span>
+                            </div>
+                            <div class="flex items-center gap-4 p-3.5 rounded-xl bg-jp-dark/80 border border-jp-border">
+                                <i data-lucide="shield-check" class="text-emerald-400 w-5 h-5 shrink-0"></i>
+                                <span class="text-sm text-slate-200">Peralatan Dipembersihkan & Disanitasi</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-jp-border flex justify-between items-center text-xs text-slate-400">
+                            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-jp-red"></i> Semantan Walk, Temerloh</span>
+                            <span class="text-jp-gold font-bold">#TakumiBarber</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-jp-dark border-b border-jp-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-jp-red/10 text-jp-red border border-jp-red/20 text-xs font-bold uppercase tracking-wider mb-3">
+                    <span class="font-jp">サービス</span> • Perkhidmatan Kami
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Menu & Senarai Harga</h2>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Pilihan potong dan kemasan mengikut cita rasa terbaik anda.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-jp-card border border-jp-border hover:border-jp-red/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-jp-red transition-colors">Takumi Master Haircut</h3>
+                                <span class="text-xs text-jp-gold font-jp">匠のカット</span>
+                            </div>
+                            <span class="px-3 py-1 bg-jp-red/10 text-jp-red border border-jp-red/30 text-sm font-bold rounded-full">RM 20 - 25</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Potongan gaya moden / klasik pilihan anda, konsultasi gaya mengikut bentuk muka, berserta cucian dan styling kemas.</p>
+                    </div>
+                    <button onclick="selectService('Takumi Master Haircut (RM 20 - 25)')" class="w-full py-2.5 rounded-xl bg-jp-dark group-hover:bg-jp-red hover:!bg-jp-crimson text-slate-300 group-hover:text-white font-semibold text-sm transition-all border border-jp-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-jp-card border border-jp-border hover:border-jp-red/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-jp-red transition-colors">Beard Trim & Razor Shave</h3>
+                                <span class="text-xs text-jp-gold font-jp">髭剃り</span>
+                            </div>
+                            <span class="px-3 py-1 bg-jp-red/10 text-jp-red border border-jp-red/30 text-sm font-bold rounded-full">RM 10 - 15</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Ukiran janggut / misai kemas dengan cukuran pisau cukur berbilah bersih dan rawatan tuala hangat menyegarkan.</p>
+                    </div>
+                    <button onclick="selectService('Beard Trim & Razor Shave (RM 10 - 15)')" class="w-full py-2.5 rounded-xl bg-jp-dark group-hover:bg-jp-red hover:!bg-jp-crimson text-slate-300 group-hover:text-white font-semibold text-sm transition-all border border-jp-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 3 (Featured) -->
+                <div class="bg-jp-card border-2 border-jp-red rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between relative overflow-hidden shadow-lg shadow-jp-red/10">
+                    <div class="absolute top-0 right-0 bg-jp-red text-white text-[10px] font-black px-3 py-1 rounded-bl-xl uppercase tracking-wider font-jp">
+                        Ninki ★ 人気
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white">Full Takumi Combo</h3>
+                                <span class="text-xs text-jp-gold font-jp">プレミアムコンボ</span>
+                            </div>
+                            <span class="px-3 py-1 bg-jp-red text-white text-sm font-bold rounded-full">RM 35 - 40</span>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Pakej Lengkap: Potongan Rambut + Ukiran Janggut + Cuci Hair Wash + Urutan Kepala Ringkas + Hot Towel Treatment.</p>
+                    </div>
+                    <button onclick="selectService('Full Takumi Combo (RM 35 - 40)')" class="w-full py-2.5 rounded-xl bg-jp-red hover:bg-jp-crimson text-white font-bold text-sm transition-all shadow-md shadow-jp-red/30">
+                        Pilih Pakej Popular
+                    </button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-jp-card border border-jp-border hover:border-jp-red/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-jp-red transition-colors">Junior Cut (Kanak-kanak)</h3>
+                                <span class="text-xs text-jp-gold font-jp">キッズカット</span>
+                            </div>
+                            <span class="px-3 py-1 bg-jp-red/10 text-jp-red border border-jp-red/30 text-sm font-bold rounded-full">RM 15</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Potongan mesra kanak-kanak dengan sentuhan sabar, selesa, dan kemas.</p>
+                    </div>
+                    <button onclick="selectService('Junior Cut (Kanak-kanak) (RM 15)')" class="w-full py-2.5 rounded-xl bg-jp-dark group-hover:bg-jp-red hover:!bg-jp-crimson text-slate-300 group-hover:text-white font-semibold text-sm transition-all border border-jp-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-jp-card border border-jp-border hover:border-jp-red/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-jp-red transition-colors">Hair Color / Dye</h3>
+                                <span class="text-xs text-jp-gold font-jp">カラーリング</span>
+                            </div>
+                            <span class="px-3 py-1 bg-jp-red/10 text-jp-red border border-jp-red/30 text-sm font-bold rounded-full">RM 50+</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Pewarnaan rambut fesyen atau hitam natural mengikut kualiti produk penjagaan rambut yang terbaik.</p>
+                    </div>
+                    <button onclick="selectService('Hair Color / Dye (RM 50+)')" class="w-full py-2.5 rounded-xl bg-jp-dark group-hover:bg-jp-red hover:!bg-jp-crimson text-slate-300 group-hover:text-white font-semibold text-sm transition-all border border-jp-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-jp-card border border-jp-border hover:border-jp-red/60 rounded-2xl p-6 transition-all hover:-translate-y-1 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="font-bold text-xl text-white group-hover:text-jp-red transition-colors">Hair Wash & Styling</h3>
+                                <span class="text-xs text-jp-gold font-jp">洗髪＆スタイリング</span>
+                            </div>
+                            <span class="px-3 py-1 bg-jp-red/10 text-jp-red border border-jp-red/30 text-sm font-bold rounded-full">RM 10</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Cucian rambut bersih menyegarkan berserta dandan gaya (*pomade / wax / clay*) sebelum ke acara atau temu janji.</p>
+                    </div>
+                    <button onclick="selectService('Hair Wash & Styling (RM 10)')" class="w-full py-2.5 rounded-xl bg-jp-dark group-hover:bg-jp-red hover:!bg-jp-crimson text-slate-300 group-hover:text-white font-semibold text-sm transition-all border border-jp-border">
+                        Pilih Perkhidmatan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOURS & LOCATION SECTION -->
+    <section id="hours" class="py-20 bg-japanese-pattern border-b border-jp-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Waktu Operasi -->
+                <div class="bg-jp-card border border-jp-border p-8 rounded-3xl shadow-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2.5 rounded-xl bg-jp-red/10 border border-jp-red/30 text-jp-red">
+                            <i data-lucide="clock" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-white">Waktu Operasi Kedai</h2>
+                            <p class="text-xs text-jp-gold font-jp">営業時間 • Beroperasi Setiap Hari</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-400 text-sm mb-6">
+                        Takumi Barbershop beroperasi <strong class="text-white">7 hari seminggu</strong>. Sila perhatikan waktu berbeza pada hari Jumaat.
+                    </p>
+
+                    <div class="space-y-3" id="hoursContainer">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+                </div>
+
+                <!-- Lokasi & Contact -->
+                <div id="location" class="bg-jp-card border border-jp-border p-8 rounded-3xl flex flex-col justify-between shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="p-2.5 rounded-xl bg-jp-red/10 border border-jp-red/30 text-jp-red">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">Lokasi & Contact</h2>
+                                <p class="text-xs text-jp-gold font-jp">アクセスマップ</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-jp-dark/80 border border-jp-border mb-6">
+                            <p class="text-slate-200 font-bold text-lg mb-1 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-jp-red"></span>
+                                TAKUMI BARBERSHOP
+                            </p>
+                            <p class="text-slate-400 text-sm leading-relaxed pl-4">
+                                No 11 Ground Floor, Jalan Permai 1,<br>
+                                Semantan Walk, 28000 Temerloh, Pahang
+                            </p>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-slate-300 mb-8 p-4 rounded-2xl bg-jp-dark/80 border border-jp-border">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Hubungi / WhatsApp</p>
+                                <a href="tel:01163824778" class="font-bold text-white hover:text-jp-red transition-colors text-lg">
+                                    011-6382 4778
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Action -->
+                    <div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Takumi+Barbershop+Semantan+Walk+Temerloh" target="_blank" rel="noreferrer" class="w-full py-3.5 px-4 rounded-xl bg-jp-dark hover:bg-slate-800 text-white font-semibold transition-all flex items-center justify-center gap-2 border border-jp-border">
+                            <i data-lucide="external-link" class="w-5 h-5 text-jp-red"></i>
+                            Buka Petak Lokasi Dalam Google Maps
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="py-20 bg-jp-dark relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-jp-red/10 text-jp-red border border-jp-red/20 text-xs font-bold uppercase tracking-wider mb-2">
+                    <span class="font-jp">予約</span> • Tempahan Slot
+                </div>
+                <h2 class="text-3xl font-extrabold text-white">Tempah Temu Janji Anda</h2>
+                <p class="text-slate-400 text-sm mt-2">Isi borang ringkas di bawah untuk menghantar mesej tempahan terus ke WhatsApp Takumi Barbershop.</p>
+            </div>
+
+            <form id="bookingForm" class="bg-jp-card border border-jp-border p-6 sm:p-8 rounded-3xl space-y-6 shadow-2xl">
+                
+                <!-- Nama Pelanggan -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Nama Pelanggan</label>
+                    <div class="relative">
+                        <i data-lucide="user" class="absolute left-3.5 top-3.5 text-slate-500 w-5 h-5"></i>
+                        <input type="text" id="customerName" required placeholder="Contoh: Amirul Shafiq" class="w-full pl-11 pr-4 py-3 bg-jp-dark border border-jp-border rounded-xl text-white focus:outline-none focus:border-jp-red transition-colors">
+                    </div>
+                </div>
+
+                <!-- Pilihan Perkhidmatan -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Pilihan Perkhidmatan</label>
+                    <select id="serviceSelect" class="w-full px-4 py-3 bg-jp-dark border border-jp-border rounded-xl text-white focus:outline-none focus:border-jp-red transition-colors">
+                        <option value="Takumi Master Haircut (RM 20 - 25)">Takumi Master Haircut (RM 20 - 25)</option>
+                        <option value="Beard Trim & Razor Shave (RM 10 - 15)">Beard Trim & Razor Shave (RM 10 - 15)</option>
+                        <option value="Full Takumi Combo (RM 35 - 40)">Full Takumi Combo (RM 35 - 40)</option>
+                        <option value="Junior Cut (Kanak-kanak) (RM 15)">Junior Cut (Kanak-kanak) (RM 15)</option>
+                        <option value="Hair Color / Dye (RM 50+)">Hair Color / Dye (RM 50+)</option>
+                        <option value="Hair Wash & Styling (RM 10)">Hair Wash & Styling (RM 10)</option>
+                    </select>
+                </div>
+
+                <!-- Tarikh & Masa -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Tarikh Cadangan</label>
+                        <input type="date" id="bookingDate" required class="w-full px-4 py-3 bg-jp-dark border border-jp-border rounded-xl text-white focus:outline-none focus:border-jp-red transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">Anggaran Masa</label>
+                        <input type="time" id="bookingTime" required class="w-full px-4 py-3 bg-jp-dark border border-jp-border rounded-xl text-white focus:outline-none focus:border-jp-red transition-colors">
+                    </div>
+                </div>
+
+                <!-- Pilihan Barber -->
+                <div>
+                    <label class="block text-sm font-semibold text-slate-300 mb-2">Pilihan Master Barber (Opsional)</label>
+                    <select id="barberSelect" class="w-full px-4 py-3 bg-jp-dark border border-jp-border rounded-xl text-white focus:outline-none focus:border-jp-red transition-colors">
+                        <option value="Mana-mana Barber Kelapangan">Mana-mana Barber Kelapangan</option>
+                        <option value="Senior Barber">Senior Barber</option>
+                        <option value="Takumi Specialist Barber">Takumi Specialist Barber</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 bg-jp-red hover:bg-jp-crimson text-white font-bold rounded-xl transition-all shadow-lg shadow-jp-red/30 text-lg flex items-center justify-center gap-2">
+                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                    Hantar Tempahan Ke WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-jp-border py-12 bg-jp-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-jp-red flex items-center justify-center text-white font-jp font-bold">
+                    匠
+                </div>
+                <div>
+                    <span class="font-extrabold tracking-wider text-white uppercase font-jp">TAKUMI BARBERSHOP</span>
+                    <p class="text-[10px] text-slate-500">Semantan Walk, Temerloh, Pahang</p>
+                </div>
+            </div>
+
+            <p class="text-slate-500 text-sm text-center">
+                © <span id="year"></span> Takumi Barbershop. Hak Cipta Terpelihara.
+            </p>
+
+            <div class="flex gap-4 text-slate-400">
+                <a href="https://wa.me/601163824778" target="_blank" class="hover:text-jp-red transition-colors"><i data-lucide="message-circle" class="w-5 h-5"></i></a>
+                <a href="tel:01163824778" class="hover:text-jp-red transition-colors"><i data-lucide="phone" class="w-5 h-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Data Waktu Operasi Takumi Barbershop
+        // Isnin - Khamis & Sabtu - Ahad: 11:00 AM – 9:30 PM (21.5)
+        // Jumaat: 3:00 PM – 9:30 PM (15 to 21.5)
+        const hoursData = [
+            { day: "Isnin", time: "11:00 AM – 9:30 PM", openHour: 11, closeHour: 21.5, isClosed: false },
+            { day: "Selasa", time: "11:00 AM – 9:30 PM", openHour: 11, closeHour: 21.5, isClosed: false },
+            { day: "Rabu", time: "11:00 AM – 9:30 PM", openHour: 11, closeHour: 21.5, isClosed: false },
+            { day: "Khamis", time: "11:00 AM – 9:30 PM", openHour: 11, closeHour: 21.5, isClosed: false },
+            { day: "Jumaat", time: "3:00 PM – 9:30 PM", openHour: 15, closeHour: 21.5, isClosed: false },
+            { day: "Sabtu", time: "11:00 AM – 9:30 PM", openHour: 11, closeHour: 21.5, isClosed: false },
+            { day: "Ahad", time: "11:00 AM – 9:30 PM", openHour: 11, closeHour: 21.5, isClosed: false },
+        ];
+
+        // Render Schedule UI
+        const hoursContainer = document.getElementById('hoursContainer');
+        hoursData.forEach(h => {
+            const item = document.createElement('div');
+            item.className = "flex justify-between items-center p-3.5 rounded-xl border bg-jp-dark/60 border-jp-border text-slate-200";
+            item.innerHTML = `
+                <span class="font-medium">${h.day}</span>
+                <span class="font-semibold text-sm text-jp-gold">${h.time}</span>
+            `;
+            hoursContainer.appendChild(item);
+        });
+
+        // Live Status Check
+        function checkOpenStatus() {
+            const now = new Date();
+            // JS getDay(): 0=Ahad, 1=Isnin, 2=Selasa, 3=Rabu, 4=Khamis, 5=Jumaat, 6=Sabtu
+            const dayMap = [6, 0, 1, 2, 3, 4, 5]; 
+            const todaySchedule = hoursData[dayMap[now.getDay()]];
+            
+            const currentDecimalHour = now.getHours() + (now.getMinutes() / 60);
+
+            const statusDot = document.getElementById('statusDot');
+            const statusText = document.getElementById('statusText');
+
+            if (currentDecimalHour >= todaySchedule.openHour && currentDecimalHour < todaySchedule.closeHour) {
+                statusDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+                statusText.textContent = `Buka Sekarang • Tutup Jam 9:30 PM`;
+            } else {
+                statusDot.className = "w-2.5 h-2.5 rounded-full bg-jp-red";
+                statusText.textContent = `Tutup Masa Ini (Waktu Buka: ${todaySchedule.time})`;
+            }
+        }
+        checkOpenStatus();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Set default min date in form
+        const dateInput = document.getElementById('bookingDate');
+        const todayStr = new Date().toISOString().split('T')[0];
+        dateInput.value = todayStr;
+        dateInput.min = todayStr;
+
+        // Function to select service from card
+        function selectService(serviceName) {
+            document.getElementById('serviceSelect').value = serviceName;
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // WhatsApp Form Handler
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('customerName').value;
+            const service = document.getElementById('serviceSelect').value;
+            const date = document.getElementById('bookingDate').value;
+            const time = document.getElementById('bookingTime').value;
+            const barber = document.getElementById('barberSelect').value;
+
+            const message = `Salam / Helo Takumi Barbershop! ✂️\nSaya ingin membuat tempahan slot barbershop:\n\n` +
+                `👤 *Nama:* ${name}\n` +
+                `💈 *Perkhidmatan:* ${service}\n` +
+                `📅 *Tarikh:* ${date}\n` +
+                `⏰ *Anggaran Masa:* ${time}\n` +
+                `👤 *Pilihan Barber:* ${barber}\n\n` +
+                `Adakah slot pada tarikh & masa ini masih ada? Terima kasih!`;
+
+            const whatsappNumber = "601163824778";
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Dynamic Year Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
